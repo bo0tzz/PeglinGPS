@@ -21,4 +21,14 @@
   <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
     <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all" />
   </ItemGroup>
+  
+  <ItemGroup>
+    <None Remove="Assets\gps" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Reference Include="DOTween, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Peglin\Peglin_Data\Managed\DOTween.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 </Project>

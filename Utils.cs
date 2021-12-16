@@ -21,12 +21,12 @@ namespace PeglinGPS
 
         public static void RecolorSlotManagers(SlotManager left, SlotManager right)
         {
-            MapNode leftNode = StaticGameData.currentNode.ChildNodes[0];
-            SpriteRenderer leftSpriteRenderer = GetSpriteRenderer(leftNode);
+            var leftNode = StaticGameData.currentNode.ChildNodes[0];
+            var leftSpriteRenderer = GetSpriteRenderer(leftNode);
             left.icon.color = leftSpriteRenderer.color;
 
-            MapNode rightNode = StaticGameData.currentNode.RightChild;
-            SpriteRenderer rightSpriteRenderer = GetSpriteRenderer(rightNode);
+            var rightNode = StaticGameData.currentNode.RightChild;
+            var rightSpriteRenderer = GetSpriteRenderer(rightNode);
             right.icon.color = rightSpriteRenderer.color;
         }
     }

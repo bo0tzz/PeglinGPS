@@ -9,21 +9,17 @@ namespace PeglinGPS.Patches
     {
         public static void Prefix(MapNode __instance, ref bool __state)
         {
-            SpriteRenderer rend = Utils.GetSpriteRenderer(__instance);
-            if (rend is not null && rend.color == Color.green)
-            {
-                __state = true;
-            }
+            var rend = Utils.GetSpriteRenderer(__instance);
+            if (rend is not null && rend.color == Color.green) __state = true;
         }
 
         public static void Postfix(MapNode __instance, ref bool __state)
         {
             if (__state)
             {
-                SpriteRenderer rend = Utils.GetSpriteRenderer(__instance);
+                var rend = Utils.GetSpriteRenderer(__instance);
                 if (rend is not null) rend.color = Color.green;
             }
         }
-
     }
 }

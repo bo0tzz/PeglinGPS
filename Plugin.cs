@@ -7,7 +7,7 @@ namespace PeglinGPS
     [BepInProcess("Peglin.exe")]
     public class Plugin : BaseUnityPlugin
     {
-        private Harmony harmony = new(PluginInfo.PLUGIN_GUID);
+        private readonly Harmony harmony = new(PluginInfo.PLUGIN_GUID);
 
         private void Awake()
         {

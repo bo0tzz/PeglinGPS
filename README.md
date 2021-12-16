@@ -7,6 +7,9 @@ This mod is imperfect and comes with no warranties. It may break
 your game, prevent you from creating new savefiles, crash your computer, 
 or set your house on fire.
 
+![Map screen](img/map.png)
+![Nav screen](img/nav.png)
+
 ## Installation guide
 1. Install BepInEx 5 according to [this guide](https://docs.bepinex.dev/articles/user_guide/installation/index.html)
 2. Download the PeglinGPS.dll file [from the latest release](https://github.com/bo0tzz/PeglinGPS/releases/latest/download/PeglinGPS.dll)

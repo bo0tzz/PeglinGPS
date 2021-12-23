@@ -1,13 +1,19 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Worldmap;
 
 namespace PeglinGPS.Behaviours
 {
     public class ColorMapNodeOnClick : MonoBehaviour
     {
         private Camera _camera;
-        private MapController _mapController;
+
+        private List<MapNodeColorSwapper> swappers;
+
+        public void Init(List<MapNodeColorSwapper> s)
+        {
+            swappers = s;
+        }
 
         private void Update()
         {
@@ -16,23 +22,13 @@ namespace PeglinGPS.Behaviours
                 var clickPosition = _camera.ScreenToWorldPoint(Input.mousePosition);
                 clickPosition.z = 0;
 
-                foreach (var node in _mapController._nodes)
-                {
-                    var rend = Utils.GetSpriteRenderer(node);
-                    var d = Utils.Get2DDistance(clickPosition, rend.transform.position);
-                    if (d < 1)
-                    {
-                        rend.color = rend.color == Color.green ? Color.white : Color.green;
-                        break;
-                    }
-                }
+                swappers.Find(s => s.Get2DDistance(clickPosition) < 1)?.SwapColor();
             }
         }
 
         private void OnEnable()
         {
             _camera = Camera.main;
-            _mapController = GetComponentInParent<MapController>();
 
             SceneManager.sceneLoaded += OnSceneLoaded;
         }

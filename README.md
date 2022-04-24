@@ -1,4 +1,7 @@
 # Peglin GPS
+
+**This mod has not been updated for the early access release, but it mostly still works. Proceed at your own peril.**
+
 This is a mod for Peglin that lets you click nodes on the map 
 to turn them green. They will then show green on the navigation 
 screen as well, so you don't need to open the minimap every time.

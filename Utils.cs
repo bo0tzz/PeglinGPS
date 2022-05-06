@@ -30,5 +30,12 @@ namespace PeglinGPS
             var rightSpriteRenderer = GetSpriteRenderer(rightNode);
             right.icon.color = rightSpriteRenderer.color;
         }
+
+        public static void RecolorSlotManager(SlotManager center)
+        {
+            var node = StaticGameData.currentNode.ChildNodes[0];
+            var spriteRenderer = GetSpriteRenderer(node);
+            center.icon.color = spriteRenderer.color;
+        }
     }
 }

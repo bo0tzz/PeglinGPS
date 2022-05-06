@@ -9,7 +9,14 @@ namespace PeglinGPS.Patches
         [HarmonyPostfix]
         public static void PostBattleControllerPatch(PostBattleController __instance)
         {
-            Utils.RecolorSlotManagers(__instance._leftSlotManager, __instance._rightSlotManager);
+            if (StaticGameData.currentNode.ChildNodes.Length == 1)
+            {
+                Utils.RecolorSlotManager(__instance._centerSlotManager);
+            }
+            else
+            {
+                Utils.RecolorSlotManagers(__instance._leftSlotManager, __instance._rightSlotManager);   
+            }
         }
 
         [HarmonyPatch(typeof(NavOnlyController), "PrepareForNavigation")]

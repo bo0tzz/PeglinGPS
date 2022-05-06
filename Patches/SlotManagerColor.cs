@@ -1,4 +1,7 @@
-﻿using HarmonyLib;
+﻿using System.Collections.Generic;
+using HarmonyLib;
+using Peglin.PegMinigame;
+using UnityEngine;
 
 namespace PeglinGPS.Patches
 {
@@ -25,5 +28,34 @@ namespace PeglinGPS.Patches
         {
             Utils.RecolorSlotManagers(__instance._leftSlotManager, __instance._rightSlotManager);
         }
+    }
+
+    [HarmonyPatch]
+    public class DynamicSlotTriggerHacks
+    {
+        private static List<DynamicSlotTrigger> thisIsDisgusting;
+        
+        [HarmonyPatch(typeof(PegMinigameManager), "CreateSlots")]
+        [HarmonyPostfix]
+        public static void HackToGrabDynamicSlotTriggers(List<DynamicSlotTrigger> __result)
+        {
+            thisIsDisgusting = __result;
+        }
+
+        [HarmonyPatch(typeof(PegMinigameManager), "CreateNavigationBouncersAndSlots")]
+        [HarmonyPostfix]
+        public static void ColorDynamicSlotTriggers()
+        {
+            if (thisIsDisgusting == null) return;
+            for (int i = 0; i < thisIsDisgusting.Count; i++)
+            {
+                DynamicSlotTrigger dynamicSlotTrigger = thisIsDisgusting[i];
+                var mapNodeSpriteRenderer = Utils.GetSpriteRenderer(StaticGameData.currentNode.ChildNodes[i]);
+                dynamicSlotTrigger.iconSpriteRenderer.color = mapNodeSpriteRenderer.color;
+            }
+
+            thisIsDisgusting = null;
+        }
+        
     }
 }

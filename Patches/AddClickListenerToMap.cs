@@ -10,6 +10,7 @@ namespace PeglinGPS.Patches
     {
         public static void Postfix(MapController __instance)
         {
+            if (__instance == null) return;
             List<MapNodeColorSwapper> swappers = new List<MapNodeColorSwapper>();
             foreach (var node in __instance._nodes)
             {

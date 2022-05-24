@@ -1,0 +1,24 @@
+[config]
+schemaVersion = "0.0.1"
+
+[package]
+namespace = "bo0tzz"
+name = "PeglinGPS"
+versionNumber = "1.2.1"
+description = "Plot out your path on the minimap"
+websiteUrl = "https://github.com/bo0tzz/PeglinGPS"
+containsNsfwContent = false
+
+[build]
+icon = "./icon.png"
+readme = "./README.md"
+outdir = "./dist"
+
+[[build.copy]]
+source = "./dist"
+target = ""
+
+[publish]
+repository = "https://thunderstore.io"
+communities = ["peglin"]
+categories = []

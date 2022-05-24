@@ -39,7 +39,7 @@ jobs:
       - uses: mavrosxristoforos/get-xml-info@1.0
         id: csproj
         with:
-          xml-file: PeglinCore.csproj
+          xml-file: PeglinGPS.csproj
           xpath: //Project/PropertyGroup/Version
       - name: Get thunderstore.toml version
         run: |

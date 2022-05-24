@@ -12,6 +12,5 @@ or set your house on fire.
 ![Nav screen](img/nav.png)
 
 ## Installation guide
-1. Install BepInEx 5 according to [this guide](https://docs.bepinex.dev/articles/user_guide/installation/index.html)
-2. Download the PeglinGPS.dll file [from the latest release](https://github.com/bo0tzz/PeglinGPS/releases/latest/download/PeglinGPS.dll)
-3. Place PeglinGPS.dll in the `BepInEx/plugins` folder, inside the game folder
+You can download the mod from [Thunderstore](https://peglin.thunderstore.io/).   
+See https://mods.pegl.in/ for links to the Discord and more.

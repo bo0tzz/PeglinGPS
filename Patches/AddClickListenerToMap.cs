@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using HarmonyLib;
+using Map;
 using PeglinGPS.Behaviours;
 using Worldmap;
 

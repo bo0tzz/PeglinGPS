@@ -4,7 +4,7 @@ schemaVersion = "0.0.1"
 [package]
 namespace = "bo0tzz"
 name = "PeglinGPS"
-versionNumber = "1.2.4"
+versionNumber = "1.2.5"
 description = "Plot out your path on the minimap"
 websiteUrl = "https://github.com/bo0tzz/PeglinGPS"
 containsNsfwContent = false

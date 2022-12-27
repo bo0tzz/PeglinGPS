@@ -8,9 +8,9 @@ namespace PeglinGPS.Patches
     [HarmonyPatch]
     public class SlotManagerColor
     {
-        [HarmonyPatch(typeof(PostBattleController), "StartNavigation")]
+        [HarmonyPatch(typeof(Battle.PostBattleController), "StartNavigation")]
         [HarmonyPostfix]
-        public static void PostBattleControllerPatch(PostBattleController __instance)
+        public static void PostBattleControllerPatch(Battle.PostBattleController __instance)
         {
             if (StaticGameData.currentNode.ChildNodes.Length == 1)
             {
@@ -18,7 +18,7 @@ namespace PeglinGPS.Patches
             }
             else
             {
-                Utils.RecolorSlotManagers(__instance._leftSlotManager, __instance._rightSlotManager);   
+                Utils.RecolorSlotManagers(__instance._leftSlotManager, __instance._rightSlotManager);
             }
         }
 
@@ -34,7 +34,7 @@ namespace PeglinGPS.Patches
     public class DynamicSlotTriggerHacks
     {
         private static List<DynamicSlotTrigger> thisIsDisgusting;
-        
+
         [HarmonyPatch(typeof(PegMinigameManager), "CreateSlots")]
         [HarmonyPostfix]
         public static void HackToGrabDynamicSlotTriggers(List<DynamicSlotTrigger> __result)
@@ -56,6 +56,6 @@ namespace PeglinGPS.Patches
 
             thisIsDisgusting = null;
         }
-        
+
     }
 }
